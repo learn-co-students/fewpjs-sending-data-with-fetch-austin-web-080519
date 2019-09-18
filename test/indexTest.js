@@ -25,8 +25,10 @@ describe( "submitData()", () => {
     nock( 'http://localhost:3000' )
       .post( '/users' )
       .reply( 201, function ( uri, requestBody ) {
+        console.log("======", requestBody)
         reqBody = requestBody
         headers = this.req.headers
+        console.log("+++++++", rando)
         return {
           id: rando,
           ...requestBody
